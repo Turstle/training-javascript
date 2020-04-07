@@ -5,6 +5,18 @@
     <meta charset="utf-8">
 
     <script>
+        // first attempt
+    /**    function isModuloZero(a, b){
+    *        const bool = a%b == 0? true : false;
+    *        if(b > a){
+    *            return "Error : b > a\n";
+    *        }
+    *        return bool;
+    *    } */
+
+        function isModuloZero(a, b){
+            return b > a? "Error : b > a" : a % b === 0;
+        }
     </script>
 
 </head>

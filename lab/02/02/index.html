@@ -5,6 +5,33 @@
     <meta charset="utf-8">
 
     <script>
+        function isItWeekendYet(currentDay){
+            switch (currentDay){
+                case 'lundi':
+                    return "C'est Lundi, le début de la semaine, un peu de patience!";
+                
+                case 'mardi':
+                    return "C'est Mardi, un peu plus patient déjà, mais c'est encore le début de la semaine..";
+
+                case 'mercredi':
+                    return "C'est Mercredi, c'est le milieu de la semaine, t'es pas arrivé encore!";
+
+                case 'jeudi': 
+                    return "C'est Jeudi, pas le milieu de semaine mais un peu plus, ça se rapproche.";
+                
+                case 'vendredi': 
+                    return "C'est Vendredi, a la fin de la journée t'es en weekend, c'est pas la mer a boire!";
+                
+                case 'samedi':
+                    return "C'est Samedi, bon t'es en Weekend, mais tu vas faire quoi du coup?"
+
+                case 'dimanche':
+                    return "C'est Dimanche, t'as intérêt a faire ton choix rapidement sinon ça va être trop tard!"
+                
+                default:
+                    return "Alors soit c'est le Weekend et t'as bu, soit t'es dislexique, soit tu sais pas taper sur un clavier, mais ce que tu m'as mis c'est pas un jour valable!"       
+            }
+        }
     </script>
 
 </head>
