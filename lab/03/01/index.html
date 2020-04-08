@@ -10,8 +10,49 @@
             return Math.ceil(Math.random() * 10)
         }
 
-        function play() {
+        function Player(name){
+            let posX;
+            let posY;
+            this.name = name;
+            this.posX = 0;
+            this.posY = 0;
 
+            this.moveForward = function(){
+                let movX = random();
+                let movY = random();
+                this.posX += movX;
+                this.posY += movY;
+                if (this.posX > 100){
+                    this.posX -= this.posX % 100;
+                    console.log(`${this.name} moved passed the X = 100 limit, staying at X = 100.`);
+                }
+                if (this.posY > 100){
+                    this.posY -= this.posY % 100;
+                    console.log(`${this.name} moved passed the Y = 100 limit, staying at Y = 100.`);
+                }
+                console.log(`${this.name} moved from [ ` + (this.posX-movX) + ', ' + (this.posY-movY) + `] to [ ${this.posX}, ${this.posY}].`);
+            }
+        }
+        
+        function play() {
+            victory = false;
+            const A = new Player('Alice');
+            const B = new Player('Bob');
+            const J = new Player('John');
+            const arrP = [A, B, J];
+            console.log('Starting the race, go!');
+            while(victory === false){
+                for(let player = 0; player < 3; player++) {
+                    arrP[player].moveForward();
+                    if(arrP[player].posX === 100 && arrP[player].posY === 100){
+                        victory = true;
+                        winner = arrP[player].name;
+                        console.log('Finish!');
+                        console.log(`The winner is ${winner}! Congratulations!`);
+                        break;
+                    }
+                }
+            }
         }
     </script>
 
